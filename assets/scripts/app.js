@@ -233,6 +233,12 @@ function printLogHandler() {
   for (let i = 0; i < 3; i++) {
     console.log('------');
   }
+  // let j = 0;
+  // while (j < 3) {
+  //   console.log('------');
+  //   j++
+  // }
+
   // for (let i = 10; i > 0;) {
   //   i--;
   //   console.log(i)
@@ -242,10 +248,33 @@ function printLogHandler() {
   //   console.log(battleLog[i]);
   // };
 
+  // While loop
+  let j = 0;
+  do {
+    console.log(j);
+    j++;
+  } while (j < 3)
+  
+  /*
+   let randomNumbers = [];
+
+  let finished = false;
+
+  while (!finished) {
+    const rndNumber = Math.random();
+    randomNumbers.push(rndNumber);
+
+    if (rndNumber > 0.5) {
+      finished = true;
+      console.log(randomNumbers);
+    }
+  }
+  */
+
   let i = 0;
   for (const logEntry of battleLog) {
     console.log(`#${i}`);
-    for (const key in logEntry){
+    for (const key in logEntry) {
       console.log(`${key} => ${logEntry[key]}`);
     }
     i++;
