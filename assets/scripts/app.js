@@ -236,7 +236,7 @@ function printLogHandler() {
   }
   // let j = 0;
   // while (j < 3) {
-  //   console.log('------');
+  //   console.log(`outer ${j}`);
   //   j++
   // }
 
@@ -251,8 +251,14 @@ function printLogHandler() {
 
   // While loop
   let j = 0;
-  do {
-    console.log(j);
+  outerWhile: do {
+    console.log(`outer ${j}`);
+    innerFor: for (let k = 0; k < 5; k++) {
+      console.log(`inner ${k}`)
+      if (k === 3) {
+        break outerWhile;
+      }
+    }
     j++;
   } while (j < 3)
 
