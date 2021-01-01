@@ -25,7 +25,15 @@ function getMaxLifeValues() {
   return parsedValue;
 }
 
-let chosenMaxLife = getMaxLifeValues();
+let chosenMaxLife;
+
+try {
+  chosenMaxLife = getMaxLifeValues();
+} catch (error) {
+  console.error(error);
+  chosenMaxLife = 100;
+  alert('Your input shoudl be number larger than zero! Now is set initial value of 100')
+}
 
 let currentMonsterHealth = chosenMaxLife;
 let currentPlayerHealth = chosenMaxLife;
